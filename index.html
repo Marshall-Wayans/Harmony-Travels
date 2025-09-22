@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harmony Travels — Home</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="landing.css">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Harmony Travels",
+    "url": "https://example.com",
+    "description": "Kenya-focused travel agency offering safaris, beach getaways and train/bus travel.",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+ 
+  <header id="site-header" class="site-header" role="banner">
+  <div class="header-inner container">
+   
+    <a href="#" id="logo" class="logo" aria-label="Harmony Travels">
+      <svg width="150" height="34" viewBox="0 0 300 68" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+        <text x="4" y="44" font-family="Montserrat, Arial" font-weight="700" font-size="30" fill="var(--text)">Harmony</text>
+        <text x="170" y="44" font-family="Montserrat, Arial" font-weight="700" font-size="22" fill="var(--accent)">Travels</text>
+      </svg>
+    </a>
+
+    
+    <nav id="primary-nav" class="nav" aria-label="Primary Navigation">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#destinations">Destinations</a>
+      <a class="nav-link" href="#experiences">Experiences</a>
+      <a class="nav-link" href="#pricing">Pricing</a>
+      <a class="nav-link" href="#testimonials">Testimonials</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+   
+
+    
+    <div class="header-actions">
+      <a id="bookNowTop" class="btn-cta" href="booking.html" aria-label="Book now">Book Now</a>
+
+      <button id="theme-toggle" class="btn-ghost" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+
+  
+  <main id="main">
+   
+    <section id="home" class="hero-section">
+      <div class="hero-bg" role="img" aria-label="Kenyan landscape"
+           style="background-image:url('pexels8.jpg')"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content container">
+        <div class="hero-left">
+          <h1 class="hero-title">Pack Curiosity. We’ll Pack the Rest.</h1>
+          <p class="hero-sub">Hand-crafted trips, flexible options, local expertise — worry-free adventures across Kenya.</p>
+
+          <div class="hero-ctas">
+     
+            <a id="hero-book" class="btn-cta" href="booking.html" role="button">Book Now</a>
+            <a class="btn-muted" href="#destinations">Explore Destinations</a>
+          </div>
+
+         
+          <form id="quick-search" class="quick-strip" aria-label="Quick booking">
+            <label class="sr-only" for="quick-dest">Destination</label>
+            <select id="quick-dest" name="dest">
+              <option value="">Destination</option>
+              <option value="Maasai Mara">Maasai Mara</option>
+              <option value="Amboseli National Park">Amboseli</option>
+              <option value="Diani Beach">Diani Beach</option>
+              <option value="Mount Kenya">Mount Kenya</option>
+              <option value="Lake Nakuru">Lake Nakuru</option>
+              <option value="Lamu Island">Lamu Island</option>
+            </select>
+
+            <label class="sr-only" for="quick-start">Start date</label>
+            <input id="quick-start" name="start" type="date" />
+
+            <label class="sr-only" for="quick-end">End date</label>
+            <input id="quick-end" name="end" type="date" />
+
+            <button class="btn-small" type="submit">Search</button>
+          </form>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <div class="hero-cards">
+            <div class="pattern-card"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=60" alt="Safari scene"></div>
+            <div class="pattern-card"><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=60" alt="Coast"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    
+    <section id="why" class="why-section container scroll-reveal">
+      <h2 class="section-heading">Why travel with Harmony?</h2>
+      <p class="section-lead">Local guides, flexible plans, and curated experiences — we handle the details so you collect the stories.</p>
+
+      <div class="why-grid">
+        <article class="why-card" tabindex="0">
+          <div class="icon-wrap"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></div>
+          <h3>Local Experts</h3>
+          <p>Guides from the region who know where and when wildlife appears — and how to make your trip authentic.</p>
+        </article>
+
+        <article class="why-card" tabindex="0">
+          <div class="icon-wrap"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+          <h3>Flexible Plans</h3>
+          <p>Change dates, upgrade transport, or add activities without hassle. Travel should be freeing — not fragile.</p>
+        </article>
+
+        <article class="why-card" tabindex="0">
+          <div class="icon-wrap"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+          <h3>Best Price Promise</h3>
+          <p>Transparent pricing, honest advice, and options that respect your budget and comfort.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="destinations" class="destinations-section container">
+      <h2 class="section-heading">Featured Destinations</h2>
+      <p class="section-lead">Handpicked places across Kenya — pick a vibe, then book your trip.</p>
+
+      <div class="dest-grid">
+        
+        <article class="dest-card scroll-reveal" data-dest="Maasai Mara" tabindex="0">
+          <div class="media">
+            <img loading="lazy"
+                 src="pexels4.jpg"
+                 alt="Lion in Maasai Mara">
+            <button class="map-toggle" aria-label="Open map for Maasai Mara" data-map="https://www.google.com/maps?q=Maasai+Mara&output=embed"><i class="fa-solid fa-location-dot"></i></button>
+          </div>
+          <div class="dest-body">
+            <h3>Maasai Mara</h3>
+            <p>World-famous safari park — wildlife, the Great Migration, and unforgettable sunsets.</p>
+            <div class="dest-actions">
+              <a class="btn-link" href="booking.html?dest=Maasai+Mara">Book This</a>
+              <button class="btn-outline more-btn" data-more="maasai">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+       
+        <article class="dest-card scroll-reveal" data-dest="Amboseli National Park" tabindex="0">
+          <div class="media">
+            <img loading="lazy" src="pexels9.jpg" alt="Amboseli elephants">
+            <button class="map-toggle" aria-label="Open map for Amboseli" data-map="https://www.google.com/maps?q=Amboseli+National+Park&output=embed"><i class="fa-solid fa-location-dot"></i></button>
+          </div>
+          <div class="dest-body">
+            <h3>Amboseli</h3>
+            <p>Iconic elephant herds with Mt. Kilimanjaro as a breathtaking backdrop.</p>
+            <div class="dest-actions">
+              <a class="btn-link" href="booking.html?dest=Amboseli+National+Park">Book This</a>
+              <button class="btn-outline more-btn" data-more="amboseli">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card scroll-reveal" data-dest="Diani Beach" tabindex="0">
+          <div class="media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60" alt="Diani Beach">
+            <button class="map-toggle" aria-label="Open map for Diani" data-map="https://www.google.com/maps?q=Diani+Beach&output=embed"><i class="fa-solid fa-location-dot"></i></button>
+          </div>
+          <div class="dest-body">
+            <h3>Diani Beach</h3>
+            <p>White-sand beaches, coral reefs, and a relaxed coastal vibe.</p>
+            <div class="dest-actions">
+              <a class="btn-link" href="booking.html?dest=Diani+Beach">Book This</a>
+              <button class="btn-outline more-btn" data-more="diani">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card scroll-reveal" data-dest="Mount Kenya" tabindex="0">
+          <div class="media">
+            <img loading="lazy" src="pexels10.jpg" alt="Mount Kenya">
+            <button class="map-toggle" aria-label="Open map for Mount Kenya" data-map="https://www.google.com/maps?q=Mount+Kenya&output=embed"><i class="fa-solid fa-location-dot"></i></button>
+          </div>
+          <div class="dest-body">
+            <h3>Mount Kenya</h3>
+            <p>A climber’s dream — alpine routes and stunning vistas.</p>
+            <div class="dest-actions">
+              <a class="btn-link" href="booking.html?dest=Mount+Kenya">Book This</a>
+              <button class="btn-outline more-btn" data-more="mount">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card scroll-reveal" data-dest="Lake Nakuru" tabindex="0">
+          <div class="media">
+            <img loading="lazy" src="pexels11.jpg" alt="Flamingos Lake Nakuru">
+            <button class="map-toggle" aria-label="Open map for Lake Nakuru" data-map="https://www.google.com/maps?q=Lake+Nakuru&output=embed"><i class="fa-solid fa-location-dot"></i></button>
+          </div>
+          <div class="dest-body">
+            <h3>Lake Nakuru</h3>
+            <p>Pink flamingos, rhinos, and brilliant birding on the soda lake.</p>
+            <div class="dest-actions">
+              <a class="btn-link" href="booking.html?dest=Lake+Nakuru">Book This</a>
+              <button class="btn-outline more-btn" data-more="nakuru">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="dest-card scroll-reveal" data-dest="Lamu Island" tabindex="0">
+          <div class="media">
+            <img loading="lazy" src="lamu.jpg" alt="Lamu Island">
+            <button class="map-toggle" aria-label="Open map for Lamu" data-map="https://www.google.com/maps?q=Lamu+Island&output=embed"><i class="fa-solid fa-location-dot"></i></button>
+          </div>
+          <div class="dest-body">
+            <h3>Lamu Island</h3>
+            <p>Historic Swahili island with peaceful beaches and old-town charm.</p>
+            <div class="dest-actions">
+              <a class="btn-link" href="booking.html?dest=Lamu+Island">Book This</a>
+              <button class="btn-outline more-btn" data-more="lamu">Learn More</button>
+            </div>
+          </div>
+        </article>
+
+
+                <article class="dest-card scroll-reveal" data-dest="Lamu Island" tabindex="0">
+          <div class="media">
+            <img loading="lazy" src="kisumu.jpg" alt="Lamu Island">
+            <button class="map-toggle" aria-label="Open map for Lamu" data-map="https://www.google.com/maps?q=Lamu+Island&output=embed"><i class="fa-solid fa-location-dot"></i></button>
+          </div>
+          <div class="dest-body">
+            <h3>Kisumu</h3>
+            <p>Historic Swahili island with peaceful beaches and old-town charm.</p>
+            <div class="dest-actions">
+              <a class="btn-link" href="booking.html?dest=Lamu+Island">Book This</a>
+              <button class="btn-outline more-btn" data-more="lamu">Learn More</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+    <section id="experiences" class="packages-section container scroll-reveal">
+      <h2 class="section-heading">Featured Packages</h2>
+      <div class="package-slider" id="package-slider" aria-label="Featured packages">
+        <button id="prevPackage" class="slider-arrow" aria-label="Previous package"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider-track" id="slider-track" tabindex="0">
+<article class="package-card">
+  <h3>3-Day Maasai Mara Safari</h3>
+  <p class="price">From KES 28,000</p>
+  <ul>
+    <li>Daily game drives</li>
+    <li>All meals included</li>
+    <li>Airport transfers</li>
+  </ul>
+  <a class="btn-cta" href="booking.html?dest=Maasai+Mara">Book Package</a>
+</article>
+
+<article class="package-card">
+  <h3>Coastal Relaxer — Diani 5 Nights</h3>
+  <p class="price">From KES 22,000</p>
+  <ul>
+    <li>Beachfront hotel</li>
+    <li>Snorkeling day trip</li>
+    <li>Breakfast included</li>
+  </ul>
+  <a class="btn-cta" href="booking.html?dest=Diani+Beach">Book Package</a>
+</article>
+
+<article class="package-card">
+  <h3>Mount Kenya Trek — 4 Days</h3>
+  <p class="price">From KES 18,500</p>
+  <ul>
+    <li>Guided trek</li>
+    <li>Camping or lodge options</li>
+    <li>Experienced local guides</li>
+  </ul>
+  <a class="btn-cta" href="booking.html?dest=Mount+Kenya">Book Package</a>
+</article>
+
+<article class="package-card">
+  <h3>Lake Nakuru Adventure — 2 Days</h3>
+  <p class="price">From KES 10,500</p>
+  <ul>
+    <li>Flamingo and birdwatching tour</li>
+    <li>Park entry & guided safari</li>
+    <li>Comfort lodge stay & meals</li>
+  </ul>
+  <a class="btn-cta" href="booking.html?dest=Lake+Nakuru">Book Package</a>
+</article>
+
+<article class="package-card">
+  <h3>Lamu Island Retreat — 4 Nights</h3>
+  <p class="price">From KES 24,000</p>
+  <ul>
+    <li>Historic town walking tour</li>
+    <li>Dhow sunset cruise</li>
+    <li>Beachfront cottage & breakfast</li>
+  </ul>
+  <a class="btn-cta" href="booking.html?dest=Lamu+Island">Book Package</a>
+</article>
+
+<article class="package-card">
+  <h3>Kisumu City Escape — 2 Days</h3>
+  <p class="price">From KES 9,500</p>
+  <ul>
+    <li>Lakeside boat trip on Lake Victoria</li>
+    <li>Visit Kisumu Impala Sanctuary</li>
+    <li>Comfort hotel stay with meals</li>
+  </ul>
+  <a class="btn-cta" href="booking.html?dest=Kisumu">Book Package</a>
+</article>
+        </div>
+        <button id="nextPackage" class="slider-arrow" aria-label="Next package"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+  
+    <section id="testimonials" class="testimonials container scroll-reveal">
+      <h2 class="section-heading">Satisfied Travelers</h2>
+      <div class="test-grid">
+        <blockquote class="test-card" tabindex="0">
+          <p>“Easy Coach made our road trip effortless. Comfortable seats and scenic views.”</p>
+          <cite>— Mary, Nairobi <span class="stars" aria-hidden="true">★★★★☆</span></cite>
+        </blockquote>
+        <blockquote class="test-card" tabindex="0">
+          <p>“SGR was relaxing and fast — perfect for a productive travel day.”</p>
+          <cite>— Tom, Kisumu <span class="stars" aria-hidden="true">★★★★☆</span></cite>
+        </blockquote>
+        <blockquote class="test-card" tabindex="0">
+          <p>“Flying saved us hours and the crew was friendly. Highly recommended.”</p>
+          <cite>— Aisha, Eldoret <span class="stars" aria-hidden="true">★★★★★</span></cite>
+        </blockquote>
+      </div>
+    </section>
+
+   
+    <section id="subscribe" class="subscribe container scroll-reveal">
+      <div class="subscribe-card">
+        <div>
+          <h3>Get local tips & occasional deals</h3>
+          <p>Sign up and we’ll send a compact travel guide for Kenya — no spam.</p>
+        </div>
+        <form id="subscribeForm" class="subscribe-form" aria-label="Subscribe to newsletter">
+          <label class="sr-only" for="emailSubscribe">Email</label>
+          <input id="emailSubscribe" type="email" placeholder="you@example.com" required />
+          <button class="btn-cta" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+   
+<footer id="site-footer" class="site-footer" role="contentinfo" aria-label="Footer">
+  <div class="footer-top container">
+
+  
+    <div class="f-col brand-col">
+      
+      <div class="footer-logo-wrap" aria-hidden="false">
+        <svg class="footer-logo" width="110" height="34" viewBox="0 0 220 68" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harmony Travels logo">
+          <rect rx="8" width="220" height="68" fill="none"></rect>
+          <text x="10" y="44" font-family="Montserrat, Arial" font-weight="700" font-size="28" fill="var(--text)">Harmony</text>
+          <text x="130" y="44" font-family="Montserrat, Arial" font-weight="600" font-size="22" fill="var(--accent)">Travels</text>
+        </svg>
+      </div>
+      <p class="tagline">Kenya-focused trips, local experts, honest pricing.</p>
+
+      <div class="cta-row">
+        <a href="booking.html" class="btn-cta footer-cta">Book Now — Your Adventure Awaits</a>
+        <button id="trustMore" class="btn-ghost small">Why choose us?</button>
+      </div>
+
+      <div class="trust-row" aria-hidden="true">
+        <div class="trust-badge"><i class="fa-solid fa-lock"></i> Secure payments</div>
+        <div class="trust-badge"><i class="fa-solid fa-map-pin"></i> Local guides</div>
+        <div class="trust-badge"><i class="fa-solid fa-star"></i> Avg 4.9 ★</div>
+      </div>
+    </div>
+
+    
+    <nav class="f-col links-col" aria-label="Footer links">
+      <div class="links-group">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="booking.html">Book</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+        </ul>
+      </div>
+      <div class="links-group">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/testimonials.html">Testimonials</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+    <div class="f-col contact-col">
+      <h4>Contact & Support</h4>
+      <address class="contact-address">
+        <a href="tel:+254700000000" class="phone">+254 700 000 000</a><br>
+        <a href="mailto:hello@harmonytravels.co" class="email">hello@harmonytravels.co</a><br>
+        <small>Office hours: Mon–Sat, 08:00–18:00</small>
+      </address>
+
+      <div class="address-line">
+        <button id="openMap" class="btn-link" data-map="https://www.google.com/maps?q=Nairobi,Kenya&output=embed">View office on map</button>
+      </div>
+
+      <form id="callbackForm" class="callback-form" aria-label="Request callback">
+        <label class="sr-only" for="cb-phone">Phone</label>
+        <input id="cb-phone" name="phone" type="tel" placeholder="+2547..." aria-label="Your phone number" required>
+        <button type="submit" class="btn-small">Request Callback</button>
+        <div class="form-msg" aria-live="polite"></div>
+      </form>
+    </div>
+
+    
+    <div class="f-col newsletter-col">
+      <h4>Travel Guide & Deals</h4>
+      <p class="muted">Sign up for our local tips and occasional discounts — free guide included.</p>
+
+      <form id="newsletterForm" class="newsletter-form" aria-label="Subscribe to newsletter">
+        <label class="sr-only" for="newsletter-email">Email</label>
+        <input id="newsletter-email" name="email" type="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn-cta">Subscribe</button>
+      </form>
+
+      <div class="social-row" aria-label="Social links">
+        <a href="#" class="social" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social" aria-label="Facebook" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social" aria-label="X - Twitter" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social" aria-label="YouTube" rel="noopener"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <div class="payments" aria-hidden="true">
+        
+        <svg class="pay-icon" viewBox="0 0 36 24" aria-hidden="true"><rect width="36" height="24" rx="3" fill="#fff" opacity="0.06"/></svg>
+        <svg class="pay-icon" viewBox="0 0 36 24" aria-hidden="true"><rect width="36" height="24" rx="3" fill="#fff" opacity="0.06"/></svg>
+        <svg class="pay-icon" viewBox="0 0 36 24" aria-hidden="true"><rect width="36" height="24" rx="3" fill="#fff" opacity="0.06"/></svg>
+      </div>
+
+    </div>
+  </div>
+
+ 
+  <div class="footer-bottom container" role="navigation" aria-label="Footer legal">
+    <small>© 2025 Harmony Travels — All rights reserved</small>
+    <div class="bottom-right">
+      <nav class="legal-links" aria-label="Legal">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </nav>
+      <select id="langSelect" aria-label="Choose language">
+        <option value="en">EN</option>
+        <option value="sw">SW</option>
+      </select>
+      <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+    </div>
+  </div>
+
+</footer>
+
+<div id="confetti-root" aria-hidden="true" class="confetti-root"></div>
+  </main>
+
+  
+  <div id="mapModal" class="modal" aria-hidden="true" role="dialog" aria-label="Map preview">
+    <div class="modal-panel">
+      <button id="mapClose" class="modal-close" aria-label="Close map">&times;</button>
+      <div id="mapFrame" class="map-frame" aria-hidden="false"></div>
+    </div>
+  </div>
+
+  
+  <div id="newsletterModal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-panel">
+      <button id="newsletterClose" class="modal-close" aria-label="Close">&times;</button>
+      <h3>Get a Kenya Travel Guide & a Small Deal</h3>
+      <p>Subscribe for local tips and occasional offers.</p>
+      <form id="modalSubscribe" class="subscribe-form">
+        <input id="modalEmail" type="email" placeholder="you@example.com" required />
+        <button class="btn-cta" type="submit">Get the Guide</button>
+      </form>
+    </div>
+  </div>
+
+  
+  <script src="landing.js"></script>
+</body>
+</html>

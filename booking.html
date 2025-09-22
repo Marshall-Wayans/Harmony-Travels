@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kenya Travel Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  
+  
+  <style>
+    :root {
+      --bg-color: #121212;        
+      --text-color: #E0E0E0;     
+      --accent-color: #FFD700;    
+      --secondary-bg: #1e1e1e;    
+      --font-family: 'Montserrat', sans-serif;
+    }
+    
+    body.light {
+      --bg-color: #f5f5f5;
+      --text-color: #222;
+      --secondary-bg: #ffffff;
+      --accent-color: #FF8C00;  
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    a { color: var(--accent-color); text-decoration: none; }
+    h1, h2, h3, h4, h5 { color: var(--text-color); }
+    img { max-width: 100%; display: block; border-radius: 8px; }
+   
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--nav-bg);
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: top 0.5s;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+    header h1 { font-size: 1.5rem; }
+    #themeToggle {
+      background: none; border: 2px solid var(--accent-color); color: var(--accent-color);
+      padding: 8px 12px; border-radius: 5px; cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    #themeToggle:hover {
+      background: var(--accent-color); color: #222;
+    }
+    
+    .hero {
+      position: relative;
+      text-align: center;
+      color: var(--text-color);
+    }
+.hero img {
+  width: 100%;
+  height: 70vh;           
+  object-fit: cover;      
+  display: block;
+  filter: brightness(80%);
+}
+@media (max-width: 768px) {
+  .hero img { height: 50vh; } 
+}
+    .hero-content {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px 30px; border-radius: 8px;
+    }
+    .hero-content h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero-content p { font-size: 1rem; }
+    
+    .destinations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+      background: var(--bg-color);
+    }
+    .destination-card {
+      background: var(--secondary-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .destination-card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+    .destination-card img {
+      transition: transform 0.3s;
+    }
+    .destination-card img:hover {
+      transform: scale(1.05);
+    }
+    .destination-info {
+      padding: 15px;
+    }
+    .destination-info h3 {
+      margin-bottom: 10px; font-size: 1.2rem;
+    }
+    .destination-info p {
+      font-size: 0.9rem; margin-bottom: 15px;
+    }
+    .destination-info .select-destination {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #222;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .destination-info .select-destination:hover {
+      background: #e0b800;
+      transform: translateY(-2px);
+    }
+    
+    #booking {
+      padding: 40px 20px;
+      background: var(--secondary-bg);
+    }
+    #booking h2 {
+      font-size: 2rem; text-align: center; margin-bottom: 20px;
+    }
+    #booking form {
+      max-width: 500px; margin: 0 auto;
+      display: flex; flex-direction: column;
+      gap: 15px;
+    }
+    #booking label {
+      display: flex; flex-direction: column;
+      font-size: 0.9rem;
+    }
+    #booking input[type="date"],
+    #booking input[type="number"],
+    #booking input[type="text"],
+    #booking select {
+      padding: 8px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: border-color 0.3s;
+    }
+    #booking input:focus,
+    #booking select:focus,
+    #booking button:focus {
+      outline: 2px solid var(--accent-color);
+    }
+    #booking .transport-options label {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 15px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    #booking .transport-options i {
+      margin-right: 6px;
+      font-size: 1.2rem;
+    }
+    #booking .transport-options input {
+      margin-right: 5px;
+      transform: scale(1.2);
+    }
+    #booking button[type="submit"] {
+      background: var(--accent-color);
+      color: #222;
+      padding: 10px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    #booking button[type="submit"]:hover {
+      background: #e0b800;
+      transform: translateY(-2px);
+    }
+    
+    .modal {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center; justify-content: center;
+      z-index: 1000;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: var(--secondary-bg);
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+      max-width: 90%; 
+    }
+    .modal-content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .close-button {
+      position: absolute; top: 10px; right: 15px;
+      font-size: 1.5rem; cursor: pointer;
+      color: var(--text-color);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.8rem;
+      background: var(--secondary-bg);
+    }
+    
+    html { scroll-behavior: smooth; }
+   
+    @media (max-width: 600px) {
+      .hero-content h1 { font-size: 1.8rem; }
+      .destination-card { width: 90%; }
+      header { flex-direction: column; gap: 10px; }
+    }
+
+
+    .select-destination.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff7b00, #ffbb00);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.select-destination.btn:hover {
+  background: linear-gradient(135deg, #ff9900, #ffd500);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.select-destination.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+  </style>
+</head>
+
+<body>
+  
+  <header>
+
+<nav aria-label="Primary">
+  <a href="index.html#home"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+  <!-- <a href="landing.html#about"><i class="fas fa-user" aria-hidden="true"></i> About</a>
+  <a href="landing.html#booking"><i class="fas fa-calendar-check" aria-hidden="true"></i> Booking</a>
+  <a href="landing.html#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a> -->
+</nav>
+    <h1>Explore Kenya’s Wonders</h1>
+    <button id="themeToggle" aria-label="Switch to light mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+
+  
+  <section class="hero">
+    <img src="pexels2.jpg" alt="Scenic view of Kenya's landscape">
+    <div class="hero-content">
+      <h1>Explore Kenya’s Wonders</h1>
+      <p>Discover the best destinations and book your adventure today!</p>
+    </div>
+  </section>
+
+  
+  <section class="destinations">
+    
+    <article class="destination-card">
+      <img src="masai-mara-lion2.jpg" alt="Lion in Maasai Mara National Reserve">
+      <div class="destination-info">
+        <h3>Maasai Mara</h3>
+        <p>Famous for its wildlife and the Great Migration of wildebeest.</p>
+       <a href="ticket.html" class="select-destination btn" aria-label="Book Maasai Mara">
+      Book Maasai Mara
+    </a>
+      </div>
+    </article>
+    
+    <article class="destination-card">
+      <img src="why-is-masai-mara-important.jpg" alt="Elephants with Kilimanjaro view in Amboseli">
+      <div class="destination-info">
+        <h3>Amboseli National Park</h3>
+        <p>Known for big elephant herds and stunning views of Mount Kilimanjaro.</p>
+         <a href="ticket.html" class="select-destination btn" aria-label="Book Maasai Mara">
+      Book Amboseli National Park
+    </a>
+      </div>
+    </article>
+    
+    <article class="destination-card">
+      <img src="pexels6.jpg" alt="White sands and blue waters at Diani Beach">
+      <div class="destination-info">
+        <h3>Diani Beach</h3>
+        <p>Tropical paradise with white sandy beaches and coral reefs.</p>
+         <a href="ticket.html" class="select-destination btn" aria-label="Book Maasai Mara">
+      Book Diani Beach
+    </a>
+      </div>
+    </article>
+   
+    <article class="destination-card">
+      <img src="Nairobi.jpg" alt="City skyline of Nairobi">
+      <div class="destination-info">
+        <h3>Nairobi</h3>
+        <p>Kenya’s capital city, home to Nairobi National Park and vibrant culture.</p>
+         <a href="ticket.html" class="select-destination btn" aria-label="Book Maasai Mara">
+      Book Nairobi City
+    </a>
+      </div>
+    </article>
+    
+    <article class="destination-card">
+      <img src="pexels11.jpg" alt="Pink flamingos at Lake Nakuru">
+      <div class="destination-info">
+        <h3>Lake Nakuru</h3>
+        <p>Famous for its pink flamingos, rhinos, and birdwatching on the soda lake.</p>
+       <a href="ticket.html" class="select-destination btn" aria-label="Book Maasai Mara">
+      Book Lake Nakuru
+    </a>
+      </div>
+    </article>
+    
+    <article class="destination-card">
+      <img src="lamu.jpg" alt="Historic streets and beach at Lamu Island">
+      <div class="destination-info">
+        <h3>Lamu Island</h3>
+        <p>Historic Swahili island with old-town charm, beaches, and rich culture.</p>
+         <a href="ticket.html" class="select-destination btn" aria-label="Book Maasai Mara">
+      Book Lamu Island
+    </a>
+      </div>
+    </article>
+
+
+        </article>
+   
+    <article class="destination-card">
+      <img src="kisumu.jpg" alt="Historic streets and beach at Lamu Island">
+      <div class="destination-info">
+        <h3>Kisumu</h3>
+        <p>Historic Swahili island with old-town charm, beaches, and rich culture.</p>
+        <a href="ticket.html" class="select-destination btn" aria-label="Book Maasai Mara">
+      Book Kisumu
+    </a>
+      </div>
+    </article>
+  </section>
+
+ 
+  <!-- <section id="booking">
+    <h2>Book Your Trip</h2>
+    <form id="bookingForm">
+   
+      <label>
+        Selected Destination:
+        <input type="text" id="destinationInput" name="destination" readonly placeholder="Choose a destination above">
+      </label>
+     
+      <label>
+        Start Date:
+        <input type="date" id="startDate" name="startDate" required>
+      </label>
+      <label>
+        End Date:
+        <input type="date" id="endDate" name="endDate" required>
+      </label>
+      
+      <div class="transport-options">
+        <label><input type="radio" name="transport" value="Bus" required><i class="fa-solid fa-bus"></i>Bus</label>
+        <label><input type="radio" name="transport" value="Train"><i class="fa-solid fa-train"></i>Train</label>
+        <label><input type="radio" name="transport" value="Plane"><i class="fa-solid fa-plane"></i>Plane</label>
+      </div>
+    
+      <label>
+        Accommodation:
+        <select name="accommodation" required>
+          <option value="">-- Select --</option>
+          <option>Hotel</option>
+          <option>Lodge</option>
+          <option>Camp</option>
+        </select>
+      </label>
+      
+      <label>
+        Number of Travelers:
+        <input type="number" name="groupSize" min="1" value="1" required>
+      </label>
+      
+      <button type="submit">Reserve Now</button>
+    </form>
+  </section> -->
+
+  
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <p id="confirmationMessage">Your booking is confirmed!</p>
+    </div>
+  </div>
+
+ 
+  <footer>
+    &copy; 2025 Kenya Travel Agency. All rights reserved.
+  </footer>
+
+  
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    
+   document.addEventListener('DOMContentLoaded', () => {
+  
+  if (window.ScrollReveal) {
+    try {
+      ScrollReveal().reveal('.hero-content', { duration: 1000, origin: 'top', distance: '50px' });
+      ScrollReveal().reveal('.destination-card', { interval: 100, distance: '20px', easing: 'ease-in' });
+      ScrollReveal().reveal('#booking', { duration: 1000, origin: 'bottom', distance: '50px' });
+    } catch (err) {
+      console.warn('ScrollReveal call failed:', err);
+    }
+  } else {
+    
+    document.querySelectorAll('.hero-content, .destination-card, #booking').forEach(el => el && el.classList.add('revealed'));
+  }
+
+  // ---------- Dark/Light mode toggle ----------
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light');
+      
+      themeToggle.innerHTML = isLight ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+      themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    });
+  }
+
+
+  const startDateEl = document.getElementById('startDate');
+  const endDateEl = document.getElementById('endDate');
+  const today = new Date().toISOString().split('T')[0];
+  if (startDateEl) {
+    startDateEl.setAttribute('min', today);
+    startDateEl.addEventListener('change', function () {
+      if (endDateEl) {
+        endDateEl.min = this.value;
+        
+        if (endDateEl.value && endDateEl.value < this.value) endDateEl.value = '';
+      }
+    });
+  }
+
+  
+  const selectButtons = Array.from(document.querySelectorAll('.select-destination'));
+  if (selectButtons.length) {
+    selectButtons.forEach(btn => {
+      
+      if (btn._hasSelectHandler) return;
+      btn._hasSelectHandler = true;
+
+      btn.addEventListener('click', (e) => {
+        
+        btn.disabled = true;
+        setTimeout(() => btn.disabled = false, 600);
+
+        const dest = String(btn.dataset.dest || btn.getAttribute('data-dest') || '').trim();
+
+        
+        const bookingSection = document.getElementById('booking') || document.querySelector('form#bookingForm') || document.getElementById('bookingForm');
+        const destInput = document.getElementById('destinationInput') || document.querySelector('input[name="destination"]') || document.getElementById('destination');
+
+        if (bookingSection && destInput) {
+          
+          try {
+            destInput.value = dest || destInput.value;
+            
+            destInput.focus({ preventScroll: true });
+            bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } catch (err) {
+            console.warn('Prefill/scroll failed:', err);
+          }
+          return;
+        }
+
+        
+        try {
+          const url = new URL('ticket.html', window.location.origin);
+          if (dest) url.searchParams.set('dest', dest);
+          window.location.href = url.toString();
+        } catch (err) {
+         
+          const href = dest ? `ticket.html?dest=${encodeURIComponent(dest)}` : 'ticket.html';
+          window.location.href = href;
+        }
+      });
+    });
+  }
+
+  
+  const bookingForm = document.getElementById('bookingForm');
+  const confirmationModal = document.getElementById('confirmationModal');
+  const confirmationMessage = document.getElementById('confirmationMessage');
+  const closeBtn = confirmationModal ? confirmationModal.querySelector('.close-button') : null;
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+
+      
+      const startVal = startDateEl ? startDateEl.value : '';
+      const endVal = endDateEl ? endDateEl.value : '';
+
+      if (startVal && endVal) {
+        const start = new Date(startVal);
+        const end = new Date(endVal);
+        if (end < start) {
+          alert('End date must be after start date.');
+          return;
+        }
+      }
+
+      
+      const destInput = document.getElementById('destinationInput') || document.getElementById('destination') || bookingForm.querySelector('[name="destination"]');
+      const destName = destInput ? (destInput.value || destInput.options?.[destInput.selectedIndex]?.value || '') : 'your trip';
+
+      
+      const message = `Booking confirmed for ${destName}! We look forward to seeing you soon.`;
+      if (confirmationModal && confirmationMessage) {
+        confirmationMessage.textContent = message;
+        confirmationModal.classList.add('active');
+        
+        if (closeBtn) closeBtn.focus();
+      } else {
+        alert(message);
+      }
+    });
+  }
+
+ 
+  if (closeBtn && confirmationModal) {
+    closeBtn.addEventListener('click', () => confirmationModal.classList.remove('active'));
+  }
+  if (confirmationModal) {
+    window.addEventListener('click', (e) => {
+      if (e.target === confirmationModal) confirmationModal.classList.remove('active');
+    });
+  }
+
+  
+  if (!window.ScrollReveal) {
+    const revealEls = document.querySelectorAll('.scroll-reveal');
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('revealed');
+          obs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  }
+});
+  </script>
+</body>
+</html>

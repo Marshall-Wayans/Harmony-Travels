@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harmony Travels — Booking & Ticket</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for small icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="ticket.css">
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+
+  <!-- App JS -->
+  <script src="ticket.js" defer></script>
+</head>
+<body>
+  <main class="container" style="padding:28px;">
+    <header style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+      <div>
+        <h1 style="margin:0;font-size:1.6rem;">Harmony Travels — Book a Trip</h1>
+        <p style="margin:6px 0 0;color:var(--muted)">Fill the form and get a downloadable ticket instantly.</p>
+      </div>
+      <div>
+        <a class="btn primary" href="/booking.html" style="text-decoration:none;color:inherit;"><i class="fa-solid fa-ticket"></i> Booking</a>
+      </div>
+    </header>
+
+    <section class="booking-grid scroll-reveal" style="display:grid;grid-template-columns:1fr 510px;gap:22px;">
+      <!-- Booking Form -->
+      <form id="bookingForm" class="card" aria-label="Booking Form" style="padding:20px;">
+        <h2 style="margin-top:0">Start Booking</h2>
+
+        <label class="field">
+          <div class="field-label">Passenger Name</div>
+          <input id="passengerName" name="passengerName" type="text" required placeholder="Jane Doe" />
+        </label>
+
+        <div style="display:flex;gap:12px">
+          <label class="field" style="flex:1">
+            <div class="field-label">Phone</div>
+            <input id="phone" name="phone" type="tel" required placeholder="+254700000000" />
+          </label>
+          <label class="field" style="flex:1">
+            <div class="field-label">Email</div>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          </label>
+        </div>
+
+        <label class="field">
+          <div class="field-label">Transport</div>
+          <select id="transport" required>
+            <option value="Bus">Bus</option>
+            <option value="Train">Train</option>
+            <option value="Flight">Flight</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <div class="field-label">Provider</div>
+          <select id="provider" required></select>
+        </label>
+
+        <label class="field">
+          <div class="field-label">Class / Type</div>
+          <select id="travelClass" required></select>
+        </label>
+
+        <div style="display:flex;gap:12px">
+          <label class="field" style="flex:1">
+            <div class="field-label">Origin</div>
+            <input id="origin" type="text" value="Nairobi" />
+          </label>
+          <label class="field" style="flex:1">
+            <div class="field-label">Destination</div>
+            <select id="destination">
+              <option value="">Choose destination</option>
+              <option>Maasai Mara</option>
+              <option>Amboseli</option>
+              <option>Diani Beach</option>
+              <option>Mount Kenya</option>
+              <option>Lake Nakuru</option>
+              <option>Nairobi</option>
+              <option>Lamu Island</option>
+              <option>Kisumu</option>
+              <option>Mombasa</option>
+              <option>Nakuru</option>
+              <option>Eldoret</option>
+            </select>
+          </label>
+        </div>
+
+        <div style="display:flex;gap:12px">
+          <label class="field" style="flex:1">
+            <div class="field-label">Depart Date</div>
+            <input id="startDate" type="date" required />
+          </label>
+          <label class="field" style="flex:1">
+            <div class="field-label">Return Date (optional)</div>
+            <input id="endDate" type="date" />
+          </label>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center">
+          <div style="flex:1">
+            <div class="small-muted">Price</div>
+            <div id="priceDisplay" style="font-weight:800;font-size:1.1rem">KES 0</div>
+          </div>
+          <div>
+            <button type="button" id="estimateBtn" class="btn small">Estimate</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+          <button type="submit" class="btn primary">Confirm & Generate Ticket</button>
+          <button type="button" id="resetBtn" class="btn">Reset</button>
+        </div>
+
+      </form>
+
+      <!-- Right column: Ticket preview -->
+      <aside class="card" style="padding:12px;">
+        <h2 style="margin-top:0">Ticket Preview</h2>
+        <div id="ticketContainer" class="ticket-card" role="region" aria-label="Ticket preview"></div>
+
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+          <button id="downloadPdfBtn" class="btn">Download PDF</button>
+          <button id="downloadPngBtn" class="btn">Download PNG</button>
+          <button id="printBtn" class="btn">Print</button>
+          <button id="copyBookingBtn" class="btn small">Copy Booking ID</button>
+        </div>
+
+        <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
